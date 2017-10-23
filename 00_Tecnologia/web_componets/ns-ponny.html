@@ -1,0 +1,26 @@
+<template id="pony-tpl">
+<style>
+    h1 {color: red  }
+</style>
+<h1>General soda</h1>
+</template>
+<script>
+
+// let's extend HTMLElement
+let PonyComponentProto = Object.create(HTMLElement.prototype);
+// add some template in the Shadow DOM
+PonyComponentProto.createdCallback = function() {
+    //var shadow = this.createShadowRoot();
+    //var template = document.querySelector('#pony-tpl');
+    let oImport = document.querySelector('link[rel="import"]').import;
+    //console.log(x.querySelector("template"))
+    var  template = oImport.querySelector("template");
+    var clone = document.importNode(template.content, true);
+    this.createShadowRoot().appendChild(clone);
+};
+let PonyComponent = document.registerElement('ns-pony', {prototype: PonyComponentProto});
+// insert in current body
+document.body.appendChild(new PonyComponent());
+
+
+</script>
