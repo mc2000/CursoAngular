@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hola mundo!!'; 
-  autor = "M. Cruz Martinez";
-  empresa = "ICA Formación";
+  autor = 'M. Cruz Martinez';
+  empresa = 'ICA Formación';
+
 }

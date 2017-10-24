@@ -1,0 +1,24 @@
+
+header{
+    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1pxpapayawhip solid;
+    padding: 1em;
+    }
+    footer{
+    text-align: center;
+    font-size: S0.9em;
+    color: papayawhip;
+    margin: 0.5em
+    }
+    footer p{
+    width: 40%;
+    margin: 1emauto
+    }
+    
+    div{
+    
+    width: 100%
+    }
