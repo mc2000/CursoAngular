@@ -1,0 +1,62 @@
+<form  (ngSubmit)="enviar()" #myform="ngForm" >
+  
+      <p>
+          <!--Etiqueta / Campo "Mombre"-->						
+          <label for="firstname">Nombre</label>
+          <input type="text" id="firstname" name="firstname" #firstnameState="ngModel"
+            [(ngModel)]="user.firstName" required maxlength="200" minlength="3">
+            
+        </p>
+             <div class="error-message"  [hidden]="firstnameState.valid || firstnameState.untouched">
+             El nombre es obligatorio</div>
+        <p>
+          <!--Etiqueta / Campo "Apellidos"-->
+          <label for="lastname">Apellidos</label>
+          <input type="text" id="lastname" name="lastname" #lastnameState="ngModel"
+            [(ngModel)]="user.lastName" maxlength="200" minlength="3">
+        </p>
+        <div class="error-message"  [hidden]="lastnameState.valid || lastnameState.untouched">
+          El apellido es obligatorio</div>
+        <p>
+          <!--Etiqueta / Campo "Telefono"-->
+          <label for="phoneNumber">Teléfono</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" #phoneNumberState="ngModel"
+            [(ngModel)]="user.phoneNumber" required pattern="^\d{9}$"> 
+        
+        </p>	
+        <div class="error-message"  [hidden]="phoneNumberState.valid || phoneNumberState.untouched">
+          El telefono es obligatorio y debe tener 9 digitos</div>					
+      <h2>Selecionar una impresora</h2>
+     <!-- <input type="radio" name="printer" id="" value="impresora 1" [(ngModel)]="impresoraSeleccionada">
+      <label for="">Ipresora 1</label>
+      <input type="radio" name="printer" id="" value="impresora 2" [(ngModel)]="impresoraSeleccionada">
+      <label for="">Ipresora 2</label>-->
+      
+      <div *ngFor="let impresora of aImpresoras">
+        <input type="radio" name="printer" id="" [value]="impresora" [(ngModel)]="impresoraSeleccionada"
+        (change)="mostrarfinal=true">
+        <label for="">{{impresora}}</label>
+      </div>
+      <h2>Selección de opciones</h2>
+      <input type="checkbox" [(ngModel)]="isClaro" [disabled]="!impresoraSeleccionada" name="ckClaro">
+      <label>Tono claro </label>
+      <input type="checkbox" [(ngModel)]="isColor" [disabled]="!impresoraSeleccionada" name="ckColor"
+      (change)="avisarPrint()"><label>Color </label>
+      <h2>Commbo box</h2>
+      <label>Selecioar Departamento </label>
+      <select id="select" name="select" [(ngModel)]="departamentoSelecionado" 
+            (ngModelChange)="avisarDepartento()"   >
+            <option *ngFor="let departamento of aDepartamentos" [ngValue]="departamento">{{departamento.nombre}}</option>
+      </select>
+      
+        <!--Botones "Enviar" y "Borrar"-->
+        <p>
+          <label for=""></label>
+          <input type="submit" id="enviar" name="enviar" value="Enviar" [disabled]="!myform.valid" >
+          <label for=""></label>			
+          <input type="button" id="borrar" name="borrar" 
+          value="Borrar" (click)="borrar()" [disabled]="myform.pristine" >
+        </p>						
+        
+      </form>
+      

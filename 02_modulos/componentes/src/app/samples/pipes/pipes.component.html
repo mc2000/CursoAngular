@@ -1,0 +1,24 @@
+<p>
+ 
+  <label for="nombre">dime tu nombre</label>
+  <input type="text" id="nombre" [(ngModel)]="sNombre"  >
+
+</p><p>
+  
+   <label for="edad">dime tu edad</label>
+   <input type="text" id="edad" [(ngModel)]="nEdad"  >
+ 
+ </p>
+
+<p>
+  <button (click)="btBorrar()">Borrar</button>
+</p>
+<p>{{nEdad>20?"Estimado señor ": "Hola "}}{{sNombre.toUpperCase()}} </p>
+<h3>Pipes </h3>
+<p> Hola {{sNombre | uppercase}} </p>
+<p>Precio {{nPrecio | currency}} </p>
+<p>Edad {{nEdad | number:'2.1-2' }} </p>
+<p>datos {{oDatos | json }}  </p>
+<p>fecha {{dFecha }}  </p>
+<p>fecha {{dFecha | date }}  </p>
+<p>fecha {{dFecha | date: 'dd MMMM yyyy' }}  </p>

@@ -1,0 +1,10 @@
+form
+{
+   width :50%;
+   margin: 1em auto;
+   background-color:  antiquewhite;
+}
+error-message
+{ text-decoration-color: red;
+    color: red;
+}
