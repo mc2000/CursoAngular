@@ -1,0 +1,36 @@
+<div>
+  <h2>
+  Pensamientos 
+  </h2>
+  <label for="idea">dime una idea</label>
+  <input type="text" id="idea" [(ngModel)]="sIdea" >
+  <p>
+    <button (click)="addIdeas()">Añadir</button>
+  </p>
+  <ng-template #vacioTemplate><p>Escribe alguna idea</p>
+  </ng-template>
+  
+  <aside *ngIf="aIdeas.length">
+  <h3>
+    lista de ideas
+  </h3>
+  <ul>
+    <li *ngFor="let idea of aIdeas; let i =index">{{i+1}} - {{idea}}</li>
+  </ul>
+  
+  </aside>
+
+  <div *ngIf="aIdeas.length > 0; then ideasTemplate else vacioTemplate"></div>
+  
+ 
+  <ng-template #ideasTemplate class="lista">
+      <h3>
+          lista de ideas
+        </h3>
+     <ul><li *ngFor="let idea of aIdeas">{{idea}}</li></ul>
+  </ng-template>
+  
+ 
+
+</div>
+

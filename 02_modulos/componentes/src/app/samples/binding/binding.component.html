@@ -1,0 +1,16 @@
+<p>
+ 
+  <label for="nombre">dime tu nombre</label>
+  <input type="text" id="nombre" [(ngModel)]="sNombre"  >
+
+</p><p>
+  
+   <label for="edad">dime tu edad</label>
+   <input type="text" id="edad" [(ngModel)]="nEdad"  >
+ 
+ </p>
+
+<p>
+  <button (click)="btBorrar()">Borrar</button>
+</p>
+<p>{{nEdad>20?"Estimado señor ": "Hola "}}{{sNombre.toUpperCase()}} </p>
