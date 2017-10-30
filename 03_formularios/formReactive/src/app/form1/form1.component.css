@@ -3,6 +3,7 @@ form
    width :50%;
    margin: 1em auto; 
    background-color:  antiquewhite;
+   padding:  1em;
 }
 .error-message
 {
