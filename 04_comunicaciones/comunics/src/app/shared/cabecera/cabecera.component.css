@@ -1,0 +1,10 @@
+header{
+    
+   /* position: fixed;*/
+    /*bottom: 0;*/
+    width: 100%;
+    border-top: 1pxpapayawhip solid;
+    padding: 1em;
+    background-color: red;
+   /* display: flex;*/
+ }
