@@ -16,6 +16,7 @@ import { ServicesModule } from './services/services.module';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     SharedModule,
     SamplesModule,
     ServicesModule, 

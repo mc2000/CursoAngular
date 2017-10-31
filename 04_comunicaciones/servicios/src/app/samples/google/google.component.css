@@ -1,0 +1,7 @@
+div.container{
+    width: 50%;
+    margin: 1em auto;
+    border: 1px solid magenta;
+    background-color: white;
+    padding: 3em 1em;
+}
